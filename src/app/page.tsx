@@ -1,103 +1,103 @@
-import Image from "next/image";
+import Link from "next/link";
+
+const modules = [
+  {
+    title: "Öğrenme Modülü",
+    description:
+      "Veri yapıları ve algoritmaları temelden ileri seviyeye, soru-cevap formatında öğrenin. Teorik bilgilerinizi sağlamlaştırın.",
+    link: "/ogren",
+    buttonText: "Başla",
+  },
+  {
+    title: "Pratik Modülü",
+    description:
+      "Farklı zorluk seviyelerinde (Kolay, Orta, Zor) ve çeşitli konularda (Diziler, Graflar, Dinamik Programlama vb.) yüzlerce algoritma sorusunu çözün. Dahili kod editörümüzle çözümlerinizi anında test edin ve en optimize sonuçlara ulaşmak için kendinizi geliştirin.",
+    link: "/pratik",
+    buttonText: "Soruları Gör",
+  },
+  {
+    title: "Test Modülü",
+    description:
+      "Teorik bilginizi çoktan seçmeli sorularla, pratik becerilerinizi ise zaman kısıtlamalı kodlama meydan okumalarıyla test edin. Performansınızı takip edin, güçlü ve zayıf yönlerinizi keşfedin ve sıralamalarda yükselin.",
+    link: "/test",
+    buttonText: "Teste Başla",
+  },
+];
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-[32px] row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm/6 text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2 tracking-[-.01em]">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-[family-name:var(--font-geist-mono)] font-semibold">
-              src/app/page.tsx
-            </code>
-            .
-          </li>
-          <li className="tracking-[-.01em]">
-            Save and see your changes instantly.
-          </li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:w-auto"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent font-medium text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 w-full sm:w-auto md:w-[158px]"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
+    <>
+      {/* Yeni Hero Bölümü */}
+      <div className="relative py-16 px-4 overflow-hidden">
+        <div className="container mx-auto relative z-10 flex flex-col md:flex-row items-center justify-between">
+          {/* Metin İçeriği */}
+          <div className="flex flex-col md:flex-row md:items-center w-full">
+            <div className="md:w-1/3 mb-4 md:mb-0">
+              <h1 className="text-5xl font-extrabold text-gray-900 leading-tight text-left">
+                Algoritma Nedir?
+              </h1>
+            </div>
+            <div className="md:w-2/3">
+              <p className="text-xl text-gray-700 text-center">
+                Algoritma, belirli bir problemi çözmek veya belirli bir görevi yerine getirmek için adım adım izlenmesi gereken talimatlar dizisidir. Bilgisayar bilimlerinde ve günlük hayatımızda karşılaştığımız birçok problemin çözümünde algoritmalar kullanılır. Örneğin, bir yemek tarifi, bir yol tarifi veya bir matematik problemini çözme adımları birer algoritmadır.
+              </p>
+            </div>
+          </div>
         </div>
-      </main>
-      <footer className="row-start-3 flex gap-[24px] flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
-    </div>
+        {/* Renk Geçişli Arka Plan Efekti */}
+        <div className="absolute inset-0 pointer-events-none">
+          <div className="absolute top-0 left-0 w-1/2 h-1/2 bg-gradient-to-br from-teal-400 to-blue-500 opacity-20 rounded-full filter blur-3xl transform -translate-x-1/4 -translate-y-1/4"></div>
+          <div className="absolute bottom-0 right-0 w-1/2 h-1/2 bg-gradient-to-tl from-purple-400 to-pink-500 opacity-20 rounded-full filter blur-3xl transform translate-x-1/4 translate-y-1/4"></div>
+        </div>
+      </div>
+      {/* HR etiketi */}
+      <hr className="border-t border-gray-300 my-8 w-full container mx-auto" />
+
+      {/* Mevcut Modül Kartları Bölümü */}
+      <div className="container mx-auto py-12 px-4">
+        <h2 className="text-4xl font-bold text-center text-white mb-4">
+          Modüllerimiz
+        </h2>
+        <p className="text-xl text-center text-gray-200 mb-12">
+          Türkçe kaynaklarla algoritmik düşünme becerilerinizi geliştirin.
+          Öğrenin, pratik yapın ve kendinizi test edin!
+        </p>
+        <div className="w-full flex flex-col space-y-5">
+          {modules.map((module, index) => {
+            const alignmentContainerClass =
+              index % 2 !== 0 ? "justify-end" : "justify-start";
+
+            return (
+              <div
+                key={module.title}
+                className={`flex w-full ${alignmentContainerClass}`}
+              >
+                <div
+                  className={`bg-white/20 backdrop-blur-lg rounded-lg shadow-lg border border-white/30 overflow-hidden
+                             transform transition-transform duration-200 hover:-translate-y-1
+                             flex flex-col w-full md:w-1/2 lg:w-2/5`}
+                >
+                  <div className="p-6 flex-grow">
+                    <h3 className="text-2xl font-semibold text-white mb-3">
+                      {module.title}
+                    </h3>
+                    <p className="text-gray-200 text-sm">
+                      {module.description}
+                    </p>
+                  </div>
+                  <div className="p-6 pt-0">
+                    <Link href={module.link}>
+                      <button className="bg-teal-600 hover:bg-teal-700 text-white font-bold py-2 px-4 rounded-md transition-colors duration-200">
+                        {module.buttonText}
+                      </button>
+                    </Link>
+                  </div>
+                </div>
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </>
   );
 }
