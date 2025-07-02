@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# AlgoLabs
 
-## Getting Started
+## Türkçe Algoritma ve Veri Yapıları Öğrenme Platformu
 
-First, run the development server:
+AlgoLabs, algoritma ve veri yapıları konularını Türkçe olarak öğrenmek ve pratik yapmak isteyen yazılım geliştiricileri için tasarlanmış interaktif bir platformdur. Bu platform, kullanıcıların temel kavramları anlamalarına, problem çözme becerilerini geliştirmelerine ve bilgilerini test etmelerine olanak tanır.
+
+## Özellikler
+
+*   **Öğrenme Modülü:** Algoritma ve veri yapıları konularını detaylı açıklamalar, günlük hayattan örnekler ve JavaScript kod örnekleriyle öğrenin. Konular, tıklanabilir başlıklar altında düzenlenmiştir.
+*   **Pratik Modülü:** Çeşitli zorluk seviyelerinde algoritmik problemler çözerek pratik yapın. Problemler kategoriye göre filtrelenebilir.
+*   **Test Modülü:** Bilgilerinizi test edin ve eksiklerinizi görün. (Geliştirme aşamasında)
+*   **Günün Sorusu:** Her gün yeni bir algoritmik problemle karşılaşın ve çözüm becerilerinizi taze tutun. Sadece JavaScript dilinde kodlama imkanı sunar.
+
+## Kullanılan Teknolojiler
+
+*   **Next.js:** React tabanlı hızlı ve ölçeklenebilir web uygulamaları geliştirmek için kullanılan bir React çerçevesi.
+*   **React:** Kullanıcı arayüzleri oluşturmak için kullanılan bir JavaScript kütüphanesi.
+*   **Tailwind CSS:** Hızlı UI geliştirme için bir yardımcı program öncelikli CSS çerçevesi.
+*   **TypeScript:** JavaScript'e tip güvenliği ekleyen bir süperset.
+*   **react-syntax-highlighter:** Kod blokları için sözdizimi vurgulama.
+
+## Kurulum
+
+Projeyi yerel makinenizde çalıştırmak için aşağıdaki adımları izleyin:
+
+1.  Depoyu klonlayın:
+    ```bash
+    git clone https://github.com/rdvankck/AlgoLabs.git
+    ```
+2.  Proje dizinine gidin:
+    ```bash
+    cd AlgoLabs/algolabs
+    ```
+3.  Bağımlılıkları yükleyin:
+    ```bash
+    npm install
+    ```
+
+## Kullanım
+
+Geliştirme sunucusunu başlatmak için:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Uygulama `http://localhost:3000` adresinde çalışacaktır.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Katkıda Bulunma
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Katkılarınızı memnuniyetle karşılarız! Hata raporları, özellik istekleri veya kod katkıları için lütfen GitHub deposunu ziyaret edin.
 
-## Learn More
+## Lisans
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+Bu proje MIT Lisansı altında lisanslanmıştır. Daha fazla bilgi için `LICENSE` dosyasına bakın.
