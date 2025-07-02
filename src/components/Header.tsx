@@ -11,9 +11,9 @@ export default function Header() {
         </Link>
         <div className="flex space-x-4">
           <nav className="hidden md:flex items-center space-x-6">
-          <Link href="/ogren" className="text-green-500 hover:text-white transition-colors">Öğren</Link>
-          <Link href="/pratik" className="text-green-500 hover:text-white transition-colors">Pratik</Link>
-          <Link href="/test" className="text-green-500 hover:text-white transition-colors">Test</Link>
+          <Link href="/ogren" className="text-green-500 hover:text-blue-500 transition-colors">Öğren</Link>
+          <Link href="/pratik" className="text-green-500 hover:text-blue-500 transition-colors">Pratik</Link>
+          <Link href="/test" className="text-green-500 hover:text-blue-500 transition-colors">Test</Link>
           <Link href="/daily-challenge" className="text-yellow-400 hover:text-yellow-300 transition-colors font-semibold">Günün Sorusu</Link>
         </nav>
         </div>
