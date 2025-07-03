@@ -1,4 +1,8 @@
+'use client';
+
 import Link from "next/link";
+import { useUser } from '@/context/UserContext';
+import NameInput from '@/components/NameInput';
 
 const modules = [
   {
@@ -25,6 +29,16 @@ const modules = [
 ];
 
 export default function Home() {
+  const { userName, setUserName } = useUser();
+
+  const handleLogin = (name: string) => {
+    setUserName(name);
+  };
+
+  if (!userName) {
+    return <NameInput onLogin={handleLogin} />;
+  }
+
   return (
     <>
       {/* Yeni Hero Bölümü */}

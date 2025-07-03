@@ -1,33 +1,21 @@
 'use client';
 
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import { getUserProfile, saveUserProfile } from '@/utils/localStorageUtils';
 import { useRouter } from 'next/navigation';
+import { useUser } from '@/context/UserContext';
 
-interface NameInputProps {
-  onLogin: (userName: string) => void;
-}
-
-const NameInput: React.FC<NameInputProps> = ({ onLogin }) => {
+const NameInput: React.FC = () => {
   const [name, setName] = useState('');
   const router = useRouter();
-
-  useEffect(() => {
-    // Check if a user is already logged in (e.g., from a previous session)
-    const lastLoggedInUser = localStorage.getItem('algolabs_last_logged_in_user');
-    if (lastLoggedInUser) {
-      onLogin(lastLoggedInUser);
-      router.push('/profile'); // Redirect to profile if already logged in
-    }
-  }, [onLogin, router]);
+  const { setUserName } = useUser();
 
   const handleLogin = () => {
     if (name.trim()) {
       const userProfile = getUserProfile(name.trim());
       saveUserProfile(userProfile); // Ensure the profile exists or is updated
-      localStorage.setItem('algolabs_last_logged_in_user', name.trim());
-      onLogin(name.trim());
-      router.push('/profile');
+      setUserName(name.trim()); // Update global user state
+      router.push('/'); // Redirect to home, which will now show main content
     }
   };
 
