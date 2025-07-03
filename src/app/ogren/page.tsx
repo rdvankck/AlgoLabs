@@ -72,7 +72,7 @@ export default function OgrenPage() {
         {filteredTopics.map(topic => (
           <div
             key={topic.id}
-            className="bg-white/10 backdrop-blur-lg rounded-lg shadow-md border border-white/20 mb-10 p-4
+            className="bg-white/20 backdrop-blur-lg rounded-lg shadow-lg border border-white/30 mb-10 p-4
                        transform transition-transform duration-200 hover:translate-x-1"
           >
             <li className="flex flex-col">
@@ -94,17 +94,17 @@ export default function OgrenPage() {
               </div>
 
               {expandedTopicId !== topic.id && (
-                <span className="text-sm text-white mt-2">Daha fazla bilgi için tıklayınız...</span>
+                <span className="text-sm text-gray-200 mt-2">Daha fazla bilgi için tıklayınız...</span>
               )}
 
               {expandedTopicId === topic.id && (
                 <div className="mt-4">
-                  <p className="text-gray-300 mb-4">{topic.description}</p>
+                  <p className="text-gray-200 mb-4">{topic.description}</p>
 
                   {topic.qa.map((item, qaIndex) => (
                     <div key={qaIndex} className="mb-4">
                       <h4 className="font-semibold text-teal-300 mb-2">Soru: {item.question}</h4>
-                      <div className="text-gray-300">
+                      <div className="text-gray-200">
                         {item.answer.split('```javascript').map((part, index) => {
                           if (index % 2 === 1) {
                             const code = part.split('```')[0];

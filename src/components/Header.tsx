@@ -14,6 +14,7 @@ export default function Header() {
           <Link href="/ogren" className="text-green-500 hover:text-blue-500 transition-colors">Öğren</Link>
           <Link href="/pratik" className="text-green-500 hover:text-blue-500 transition-colors">Pratik</Link>
           <Link href="/test" className="text-green-500 hover:text-blue-500 transition-colors">Test</Link>
+          <Link href="/profile" className="text-green-500 hover:text-green-600 transition-colors">Kullanıcı Profili</Link>
           <Link href="/daily-challenge" className="text-yellow-400 hover:text-yellow-300 transition-colors font-semibold">Günün Sorusu</Link>
         </nav>
         </div>

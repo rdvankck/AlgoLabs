@@ -11,7 +11,7 @@ const categories = [
   { id: 'string', name: 'String' },
   { id: 'graflar', name: 'Graflar' },
   { id: 'dinamik-programlama', name: 'Dinamik Programlama' },
-  { id: 'bagli-listeler', name: 'Bağlı Listeler' },
+  { id: 'bagli-listeler', name: 'Bağlı Listeler' }, 
   { id: 'agaclar', name: 'Ağaçlar' },
 ];
 

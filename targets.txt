@@ -1,0 +1,32 @@
+
+   2. Algoritma ve Veri Yapısı Görselleştiricileri (Öğrenme Modülü İçin):
+       * Diziler, bağlı listeler, ağaçlar, graflar gibi veri yapılarının nasıl çalıştığını veya sıralama algoritmalarının adım adım nasıl ilerlediğini görsel olarak gösteren interaktif animasyonlar. Bu, soyut kavramların daha iyi
+         anlaşılmasına yardımcı olur.
+
+
+   3. Kullanıcı Hesapları ve İlerleme Takibi:
+       * Kullanıcıların kaydolup giriş yapabilmesi.
+       * Çözdükleri problem sayısını, tamamladıkları öğrenme konularını ve genel ilerlemelerini takip edebilecekleri bir profil sayfası.
+       * Zorluk seviyelerine göre rozetler veya puanlar gibi gamification (oyunlaştırma) öğeleri.
+
+
+   4. Daha Fazla İçerik ve Zorluk Seviyeleri:
+       * Mevcut kategorilere daha fazla problem eklemek.
+       * "İleri" seviye problemler ve öğrenme konuları eklemek (örneğin, Dinamik Programlama'nın daha karmaşık uygulamaları, Geri İzleme (Backtracking), Greedy Algoritmalar, Ağaç Traversal'larının farklı türleri).
+       * Yeni veri yapıları ve algoritmalar için kategoriler eklemek (örneğin, Hash Tabloları, Yığınlar, Kuyruklar, Heap'ler, Trie'lar).
+
+   5. Topluluk ve Tartışma Forumları:
+       * Her problem veya öğrenme konusu altında kullanıcıların soru sorabileceği, çözümlerini paylaşabileceği ve birbirlerine yardımcı olabileceği bir yorum veya tartışma bölümü.
+
+
+   6. Test Modülünün Geliştirilmesi:
+       * Çoktan seçmeli sorular, kod tamamlama veya hata ayıklama senaryoları gibi farklı test türleri.
+       * Test sonuçlarına göre kişiselleştirilmiş öğrenme önerileri sunma.
+
+
+   7. Çoklu Dil Desteği (Kod Örnekleri İçin):
+       * Şu anda sadece JavaScript kod örnekleri var. Python, Java, C++ gibi diğer popüler programlama dillerinde de çözümler sunmak.
+
+
+   8. Arama ve Filtreleme İyileştirmeleri:
+       * Zorluk seviyesine, kategoriye ve hatta belirli anahtar kelimelere göre daha gelişmiş arama ve filtreleme seçenekleri.

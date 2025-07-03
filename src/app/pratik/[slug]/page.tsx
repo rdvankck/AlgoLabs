@@ -2,6 +2,29 @@
 import { problems } from "@/data/problems";
 import { useState } from "react";
 import React from 'react';
+import Editor from 'react-simple-code-editor';
+import { Light as SyntaxHighlighter } from 'react-syntax-highlighter';
+import { atomOneDark } from 'react-syntax-highlighter/dist/cjs/styles/hljs';
+import { updateUserProfile, getUserProfile } from '@/utils/localStorageUtils';
+
+const customAtomOneDark = {
+  ...atomOneDark,
+  hljs: {
+    ...atomOneDark.hljs,
+    color: '#e5e7eb !important', // text-gray-200 rengi
+    lineHeight: '1.4',
+  },
+  'pre[class*="language-"]': {
+    ...atomOneDark['pre[class*="language-"]'],
+    margin: '0px',
+    border: '0px',
+    padding: '10px',
+    lineHeight: '1.4',
+    boxSizing: 'border-box',
+    tabSize: 4,
+    whiteSpace: 'pre-wrap',
+  },
+};
 
 export default function ProblemPage({ params }: { params: Promise<{ slug: string }> }) {
   const resolvedParams = React.use(params);
@@ -13,7 +36,7 @@ export default function ProblemPage({ params }: { params: Promise<{ slug: string
     return <p className="text-center text-gray-600 py-12">Soru bulunamadı.</p>;
   }
 
-  const runCode = () => {
+const runCode = () => {
     try {
       const consoleOutput: string[] = [];
       const originalConsoleLog = console.log;
@@ -24,7 +47,19 @@ export default function ProblemPage({ params }: { params: Promise<{ slug: string
       eval(code);
 
       console.log = originalConsoleLog;
-      setOutput(consoleOutput.join('\n'));
+      const newOutput = consoleOutput.join('\n');
+      setOutput(newOutput);
+
+      // Check if code execution was successful (you might want a more robust check)
+      if (!newOutput.startsWith("Hata:") && problem?.id) {
+        const currentUser = localStorage.getItem('algolabs_last_logged_in_user');
+        if (currentUser) {
+          updateUserProfile(currentUser, {
+            solvedProblems: [...(getUserProfile(currentUser).solvedProblems || []), problem.id]
+          });
+        }
+      }
+
     } catch (error: unknown) {
       if (error instanceof Error) {
         setOutput(`Hata: ${error.message}`);
@@ -51,13 +86,34 @@ export default function ProblemPage({ params }: { params: Promise<{ slug: string
         <div className="p-4 border-b border-gray-200">
           <h3 className="text-xl font-bold text-gray-800">Kod Editörü</h3>
         </div>
-        <textarea
-          value={code}
-          onChange={(e) => setCode(e.target.value)}
-          className="w-full flex-grow bg-gray-800 text-gray-200 border-none rounded-b-lg p-4
-                     font-mono text-sm resize-none outline-none focus:ring-2 focus:ring-teal-500"
-          style={{ minHeight: '300px' }}
-        />
+        <div className="flex-grow bg-gray-900 rounded-b-lg overflow-hidden"> {/* bg-gray-900 olarak değiştirildi */}
+          <Editor
+            value={code}
+            onValueChange={code => setCode(code)}
+            highlight={code => (
+              <SyntaxHighlighter language="javascript" style={customAtomOneDark}>
+                {code}
+              </SyntaxHighlighter>
+            )}
+            style={{
+              fontFamily: '"Fira code", "Fira Mono", monospace',
+              fontSize: 14,
+              minHeight: '300px',
+              lineHeight: '1.4',
+              boxSizing: 'border-box',
+              tabSize: 4,
+              verticalAlign: 'top',
+            }}
+            className="w-full h-full code-editor-container"
+          />
+        </div>
+        <div className="p-4 border-t border-gray-200">
+          <h3 className="text-xl font-bold text-gray-800 mb-2">Çıktı Konsolu</h3>
+          <pre className="bg-gray-800 text-white p-4 rounded-md min-h-[100px] max-h-[200px]
+                          overflow-auto whitespace-pre-wrap font-mono text-sm">
+            {output || "Kod çıktısı burada görünecek."}
+          </pre>
+        </div>
         <div className="p-4 border-t border-gray-200 flex justify-end space-x-4">
           <button
             onClick={runCode}
@@ -67,13 +123,6 @@ export default function ProblemPage({ params }: { params: Promise<{ slug: string
             Kodu Çalıştır
           </button>
           {/* Testi Gönder butonu daha sonra eklenecek */}
-        </div>
-        <div className="p-4 border-t border-gray-200">
-          <h3 className="text-xl font-bold text-gray-800 mb-2">Çıktı Konsolu</h3>
-          <pre className="bg-gray-800 text-gray-200 p-4 rounded-md min-h-[100px] max-h-[200px]
-                          overflow-auto whitespace-pre-wrap font-mono text-sm">
-            {output || "Kod çıktısı burada görünecek."}
-          </pre>
         </div>
       </div>
     </div>

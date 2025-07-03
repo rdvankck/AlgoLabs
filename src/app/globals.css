@@ -41,3 +41,8 @@ body {
   background-size: 400% 400%;
   animation: gradient-animation 15s ease infinite;
 }
+
+.npm__react-simple-code-editor__textarea {
+  line-height: 1.5 !important;
+  padding: 10px !important;
+}
